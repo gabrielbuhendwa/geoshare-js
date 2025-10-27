@@ -12,10 +12,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist', 'assets', 'scripts'),
     publicPath: 'assets/scripts/'
   },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    contentBase: './dist'
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+    static: {
+    directory: path.resolve(__dirname, 'dist'),
   },
+    port: 3000,
+    open: true,
+    compress: true,
+    historyApiFallback: true,
+  },
+
   module: {
     rules: [
       {
